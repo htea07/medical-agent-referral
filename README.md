@@ -1,4 +1,4 @@
-# Enforcing Patient Consent Between AI Agents in Code, Not Prompt
+# Enforcing Patient Consent Between AI Agents in Code
 
 ▶ Live demo: https://cross-principal-medical-referral.streamlit.app/
 
@@ -10,7 +10,7 @@ referring physician's agent and a specialist's agent — exchange clinical
 information to coordinate care, under a permission boundary enforced in the
 **tool layer**, not in a prompt.
 
-> ⚠️ This is a demonstrator on **synthetic data**, not a HIPAA-compliant system.
+> This is a demonstrator on **synthetic data**, not a HIPAA-compliant system.
 > No real PHI is involved. It shows the *architecture* that HIPAA's
 > "minimum necessary" rule and the special-category consent statutes demand; it
 > is not compliance tooling.
