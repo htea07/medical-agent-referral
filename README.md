@@ -1,4 +1,4 @@
-# Enforcing Patient Consent Between AI Agents in Code
+# Enforcing Patient Consent Using AI Agents 
 
 ▶ Live demo: https://cross-principal-medical-referral.streamlit.app/
 
