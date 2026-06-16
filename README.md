@@ -3,9 +3,12 @@
 ▶ Live demo: https://cross-principal-medical-referral.streamlit.app/
 
 A working demonstrator of **minimum-necessary disclosure enforcement for
-cross-principal agent communication**, grounded in healthcare referral.
+cross-principal agent communication**, grounded in healthcare referral. The thesis 
+was the following:  "Don't ask the model to keep a secret; don't give it the secret."
 
-Two agents acting for *different principals* with misaligned interests — a
+Healthcare is a great example for how to direct two agents acting for different parties and exchanging sensitive data because the rules are legally defined and easy to verify. 
+
+There are two agents acting for *different principals* with misaligned interests — a
 referring physician's agent and a specialist's agent — exchange clinical
 information to coordinate care, under a permission boundary enforced in the
 **tool layer**, not in a prompt.
