@@ -8,8 +8,8 @@ was the following:  "Don't ask the model to keep a secret; don't give it the sec
 
 Healthcare is a great example for how to direct two agents acting for different parties and exchanging sensitive data because the rules are legally defined and easy to verify. 
 
-There are two agents acting for *different principals* with misaligned interests — a
-referring physician's agent and a specialist's agent — exchange clinical
+There are two agents acting for *different principals* with misaligned interests: a
+referring physician's agent and a specialist's agent. They exchange clinical
 information to coordinate care, under a permission boundary enforced in the
 **tool layer**, not in a prompt.
 
@@ -26,8 +26,8 @@ tool's implementation (`specialist_tools.py`) routes every read through
 *for this referral*. Out-of-scope records — a psychotherapy note on a cardiology
 referral, say — are never returned, so they never enter the model's context.
 
-The alternative — loading every record and instructing the model "don't reveal
-the psych notes" — is security theater: the data is already in context, and a
+The alternative, loading every record and instructing the model "don't reveal
+the psych notes," is security theater: the data is already in context, and a
 jailbreak or model error leaks it. **Don't ask the model to keep a secret;
 don't give it the secret.**
 
@@ -51,10 +51,10 @@ don't give it the secret.**
 
 The escalation loop (`request_additional_scope`) is the dynamic half: when the
 specialist surfaces an off-pathway concern, it can *ask* the patient's consent
-policy to widen scope — but it can never widen its own access. The policy
+policy to widen scope, but it can never widen its own access. The policy
 (`scope.evaluate_escalation`) grants only what the patient pre-consented to;
 everything else, and every protected category, is denied or routed to manual
-review. Every decision — disclosure or escalation, granted or denied — is
+review. Every decision/disclosure/escalation, granted or denied, is
 written to a structured, attributable **decision log** (`audit.py`).
 
 ## Layout
@@ -101,9 +101,7 @@ a substance-use escalation **denied** (Part 2), and the full decision log.
 
 Tool-layer authorization for LLM agents is established practice (OWASP AI Agent
 Security Cheat Sheet; Oso, Cerbos). The MCP authorization spec and Google's A2A
-protocol tackle agent-to-agent delegation. What's under-explored, and what this
-builds: the **cross-principal** case — two agents with conflicting interests
+protocol tackle agent-to-agent delegation. What's under-explored is the **cross-principal** case — two agents with conflicting interests
 negotiating **purpose-scoped, minimum-necessary** disclosure, including the
-special-category consent (Part 2 / psychotherapy / HIV) that genuinely requires
-explicit patient authorization — as a concrete, runnable demonstrator rather
-than a spec.
+special-category consent (psychotherapy / HIV statuses) that genuinely requires
+explicit patient authorization — as a concrete demonstrator.
