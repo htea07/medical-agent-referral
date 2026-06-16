@@ -105,3 +105,4 @@ protocol tackle agent-to-agent delegation. What's under-explored is the **cross-
 negotiating **purpose-scoped, minimum-necessary** disclosure, including the
 special-category consent (psychotherapy / HIV statuses) that genuinely requires
 explicit patient authorization — as a concrete demonstrator.
+
